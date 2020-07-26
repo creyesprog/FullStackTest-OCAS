@@ -1,4 +1,4 @@
-﻿/** ******************* Utilities ******************* */
+﻿/** ******************* Importing references ******************* */
 @font-face {
   font-family: 'Roboto';
   src: url("../fonts/Roboto-Regular.eot");
@@ -167,6 +167,7 @@
   font-style: normal;
   font-display: swap; }
 
+/** ******************* Utilities ******************* */
 .flex {
   display: flex; }
 
@@ -199,10 +200,17 @@ a {
   background-color: #1b6ec2;
   border-color: #1861ac; }
 
-/** ******************* Bootstrap overrides ******************* */
+/** ******************* Global Bootstrap overrides ******************* */
 .modal-header h5 {
   font-family: "Roboto Slab";
   font-weight: 400; }
+
+.table {
+  color: #111319;
+  border-radius: 6px;
+  background-color: #f2f1e8; }
+  .table thead tr th {
+    border-top: 0; }
 
 /** ******************* Custom CSS ******************* */
 html {
@@ -219,37 +227,58 @@ html {
       html body header nav .container {
         font-family: "Roboto Slab";
         font-weight: 400; }
-    html body .section-form, html body section-list {
+    html body .section-list {
+      padding-top: 100px;
       width: 100%;
       background-color: #242839; }
-      html body .section-form .form-container, html body section-list .form-container {
+      html body .section-list .list-container {
         min-height: 100vh;
         width: 100%;
         flex-direction: column; }
-        html body .section-form .form-container h1, html body section-list .form-container h1 {
+        html body .section-list .list-container h1 {
+          font-family: "Roboto Slab";
+          font-weight: 400;
+          margin-bottom: 40px;
+          color: #eee; }
+        html body .section-list .list-container table {
+          color: #111319;
+          border-radius: 6px;
+          background-color: #f2f1e8; }
+          html body .section-list .list-container table thead tr th {
+            font-family: "Roboto Slab";
+            font-weight: 400;
+            font-weight: bold; }
+    html body .section-form {
+      width: 100%;
+      background-color: #242839; }
+      html body .section-form .form-container {
+        min-height: 100vh;
+        width: 100%;
+        flex-direction: column; }
+        html body .section-form .form-container h1 {
           font-family: "Roboto Slab";
           font-weight: 400;
           margin-bottom: 40px;
           color: #eee;
           /*border-bottom: 1px solid $border-line-grey;*/ }
-        html body .section-form .form-container #form-activity, html body section-list .form-container #form-activity {
+        html body .section-form .form-container #form-activity {
           background-color: #f2f1e8;
           color: #111319;
           padding: 20px;
           border-radius: 6px;
           min-height: 520px; }
-          html body .section-form .form-container #form-activity .row .form-group, html body section-list .form-container #form-activity .row .form-group {
+          html body .section-form .form-container #form-activity .row .form-group {
             text-align: left;
             font-weight: 300; }
-            html body .section-form .form-container #form-activity .row .form-group label, html body section-list .form-container #form-activity .row .form-group label {
+            html body .section-form .form-container #form-activity .row .form-group label {
               padding-left: 5px; }
-            html body .section-form .form-container #form-activity .row .form-group input, html body section-list .form-container #form-activity .row .form-group input {
+            html body .section-form .form-container #form-activity .row .form-group input {
               border: 0;
               border-bottom: 1px solid #D2D2D2;
               border-radius: 0px;
               background-color: transparent;
               font-weight: 400; }
-          html body .section-form .form-container #form-activity .validation-summary-errors, html body section-list .form-container #form-activity .validation-summary-errors {
+          html body .section-form .form-container #form-activity .validation-summary-errors {
             color: red;
             text-align: left; }
 

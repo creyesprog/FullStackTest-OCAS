@@ -5,8 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using FullStack.Infrastructure.Models.ViewModels;
 using FullStack.Infrastructure.Database.Models;
+using FullStack.Infrastructure.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using FullStack.Infrastructure.Services.Interfaces;
 
@@ -48,13 +48,14 @@ namespace FullStack.Controllers
 
         public async Task<IActionResult> Submissions()
         {
-            List<SubmissionListViewModel> viewModel = await submissionService.GetSubmissionsAsync().ContinueWith(x =>
+            IList<SubmissionListViewModel> viewModel = await submissionService.GetSubmissionsAsync().ContinueWith(x =>
                 x.Result.Select(submission => new SubmissionListViewModel()
                 {
                     Email = submission.Email,
                     FirstName = submission.FirstName,
                     LastName = submission.LastName,
-                    Comments = submission.Comments
+                    Comments = submission.Comments,
+                    Activity = submission.Activity.Name
                 }).ToList()
             );
 

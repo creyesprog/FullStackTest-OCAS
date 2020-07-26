@@ -32,7 +32,10 @@ namespace FullStack
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews().AddNewtonsoftJson();
-            services.AddDbContext<FullStackTestContext>(options => options.UseSqlServer(Configuration.GetConnectionString("FullStackDatabase")));
+            services.AddDbContext<FullStackTestContext>(options => 
+                options.UseLazyLoadingProxies() // Add that sweeeet lazy loaaading
+                .UseSqlServer(Configuration.GetConnectionString("FullStackDatabase")
+            ));
             services.AddScoped<IActivityRepository, ActivityRepository>();
             services.AddScoped<ISubmissionRepository, SubmissionRepository>();
             services.AddScoped<ISubmissionService, SubmissionService>();

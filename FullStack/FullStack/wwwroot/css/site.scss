@@ -1,7 +1,10 @@
-﻿/** ******************* Utilities ******************* */
+﻿/** ******************* Importing references ******************* */
+
 @import './_variables.scss';
 @import './_mixins.scss';
 @import './_fonts.scss';
+
+/** ******************* Utilities ******************* */
 
 .flex {
     display: flex;
@@ -46,12 +49,25 @@ a {
     }
 }
 
-/** ******************* Bootstrap overrides ******************* */
+/** ******************* Global Bootstrap overrides ******************* */
 
 .modal-header {
     h5 {
         @include font-roboto-slab-bold;
     }
+}
+
+.table {
+    thead {
+        tr {
+            th {
+                border-top: 0;
+            }
+        }
+    }
+    color: $text-color-black;
+    border-radius: $card-radius;
+    background-color: $bg-off-white
 }
 
 /** ******************* Custom CSS ******************* */
@@ -68,6 +84,7 @@ html {
         header {
             position: absolute;
             width: 100%;
+
             nav {
                 .container {
                     @include font-roboto-slab-bold;
@@ -75,7 +92,39 @@ html {
             }
         }
 
-        .section-form, section-list {
+        .section-list {
+            padding-top: 100px;
+            width: 100%;
+            background-color: $bg-blue-royal;
+
+            .list-container {
+                min-height: 100vh;
+                width: 100%;
+                flex-direction: column;
+
+                h1 {
+                    @include font-roboto-slab-bold;
+                    margin-bottom: 40px;
+                    color: $text-color-white;
+                }
+
+                table {
+                    thead {
+                        tr {
+                            th {
+                                @include font-roboto-slab-bold;
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                    color: $text-color-black;
+                    border-radius: $card-radius;
+                    background-color: $bg-off-white
+                }
+            }
+        }
+
+        .section-form {
             width: 100%;
             background-color: $bg-blue-royal;
 
@@ -116,7 +165,6 @@ html {
                             }
 
                             textarea {
-
                             }
                         }
                     }

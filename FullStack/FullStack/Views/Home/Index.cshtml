@@ -1,6 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Activity Sign Up";
 }
+
 @model FullStack.Infrastructure.Models.ViewModels.SubmissionViewModel
 <section class="section-form">
     <div class="container form-container flex-center text-center">
@@ -105,7 +106,6 @@
                     dataType: "json",
                     contentType: "application/json"
                 }).done(function (data) {
-                    // TODO: Should be passing object that contains errors. Need to do this in backend
                     $modalBody.html("Success! <a href='/Home/Submissions'>Click the following to see list of submissions.</a>");
                 }).fail(function (data) {
                     $modalBody.text("Sorry, we're experiencing some technical difficuly - please try again later! :)");

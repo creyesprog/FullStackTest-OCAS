@@ -24,6 +24,7 @@ namespace FullStack.Infrastructure.Models.ViewModels
         [MaxLength(50, ErrorMessage = "Change your last name to fit 50 characters!")]
         public string LastName { get; set; }
         [Required]
+        [EmailAddress]
         [MaxLength(50, ErrorMessage = "Change your email to fit 50 characters!")]
         public string Email { get; set; }
         [MaxLength(50, ErrorMessage = "Change your message to fit 200 characters!")]

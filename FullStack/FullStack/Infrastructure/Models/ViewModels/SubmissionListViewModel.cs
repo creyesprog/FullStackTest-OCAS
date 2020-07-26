@@ -11,6 +11,7 @@ namespace FullStack.Infrastructure.Models.ViewModels
         public string Email { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string Activity { get; set; }
         public string Comments { get; set; }
     }
 }

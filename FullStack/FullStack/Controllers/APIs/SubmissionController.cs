@@ -55,11 +55,5 @@ namespace FullStack.Controllers.APIs
 
             return BadRequest(dto);
         }
-
-        [HttpGet]
-        public async Task<IActionResult> Get()
-        {
-            return Ok();
-        }
     }
 }

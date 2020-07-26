@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using FullStack.Infrastructure.Database.Models;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace FullStack.Infrastructure.Database
 {

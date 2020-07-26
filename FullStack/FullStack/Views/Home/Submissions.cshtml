@@ -1,0 +1,82 @@
+﻿@{
+    ViewData["Title"] = "Submissions";
+}
+@model IEnumerable<FullStack.Infrastructure.Models.ViewModels.SubmissionViewModel>
+<section class="section-list">
+    <div class="container list-container flex-center text-center">
+        <h1 class="display-4">> Submissions</h1>
+        @*<form id="form-activity" action="api/Submission/Post" method="post">*@
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col" asp-for="@Model.FirstOrDefault().Email">Email</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Comments</th>
+                </tr>
+            </thead>
+            @foreach (var submission in Model)
+            {
+
+            }
+        </table>
+        @*<div>
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label asp-for="@Model.FirstName"></label>
+                            <input class="form-control" asp-for="@Model.FirstName" />
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label asp-for="@Model.LastName"></label>
+                            <input class="form-control" asp-for="@Model.LastName" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label asp-for="@Model.Email"></label>
+                            <input class="form-control" asp-for="@Model.Email" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label asp-for="@Model.ActivityId"></label>
+                            <select class="form-control" asp-for="@Model.ActivityId" asp-items="@Model.submissionActivities">
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label asp-for="@Model.Comments"></label>
+                            <textarea class="form-control" asp-for="@Model.Comments"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-9">
+                        <div asp-validation-summary="All"></div>
+                    </div>
+                    <div class="col-3">
+                        <button data-target="#submission-modal" type="submit" class="btn btn-primary">SUBMIT</button>
+                    </div>
+                </div>
+            </div>*@
+    </div>
+</section>
+
+@section Scripts {
+    <script>
+        $(function () {
+
+            // Pagination implementation
+        });
+    </script>
+}

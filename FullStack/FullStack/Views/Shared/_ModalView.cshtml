@@ -1,0 +1,22 @@
+﻿<!-- Modal -->
+@model FullStack.Infrastructure.Models.PartialModels.ModalViewModel;
+
+<div class="modal fade" id="@Model.DataTarget" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"> @Model.Title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @Model.Content
+            </div>
+            <div class="modal-footer">
+                <button id="@Model.PrimaryButtonId" type="button" class="btn btn-primary">@Model.PrimaryButtonText</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">@Model.SecondaryButtonText</button>
+            </div>
+        </div>
+    </div>
+</div>

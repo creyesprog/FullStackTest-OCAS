@@ -1,0 +1,170 @@
+﻿/** ******************* Utilities ******************* */
+@import './_variables.scss';
+@import './_mixins.scss';
+@import './_fonts.scss';
+
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+a {
+    color: #0366d6;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: $button-color-blue;
+    border-color: #1861ac;
+    border-radius: $button-radius;
+}
+
+.nav-pills {
+    .nav-link.active {
+        color: #fff;
+        background-color: #1b6ec2;
+        border-color: #1861ac;
+    }
+
+    .show {
+        > .nav-link {
+            color: #fff;
+            background-color: #1b6ec2;
+            border-color: #1861ac;
+        }
+    }
+}
+
+/** ******************* Bootstrap overrides ******************* */
+
+.modal-header {
+    h5 {
+        @include font-roboto-slab-bold;
+    }
+}
+
+/** ******************* Custom CSS ******************* */
+
+html {
+    font-size: 14px;
+    position: relative;
+
+    body {
+        @include font-roboto;
+        display: flex;
+        margin-bottom: 60px;
+
+        header {
+            position: absolute;
+            width: 100%;
+            nav {
+                .container {
+                    @include font-roboto-slab-bold;
+                }
+            }
+        }
+
+        .section-form, section-list {
+            width: 100%;
+            background-color: $bg-blue-royal;
+
+            .form-container {
+                min-height: 100vh;
+                width: 100%;
+                flex-direction: column;
+
+                h1 {
+                    @include font-roboto-slab-bold;
+                    margin-bottom: 40px;
+                    color: $text-color-white;
+                    /*border-bottom: 1px solid $border-line-grey;*/
+                }
+
+                #form-activity {
+                    background-color: $bg-off-white;
+                    color: $text-color-black;
+                    padding: 20px;
+                    border-radius: $card-radius;
+                    min-height: 520px;
+
+                    .row {
+                        .form-group {
+                            text-align: left;
+                            font-weight: 300;
+
+                            label {
+                                padding-left: 5px;
+                            }
+
+                            input {
+                                border: 0;
+                                border-bottom: 1px solid $border-line-grey;
+                                border-radius: 0px;
+                                background-color: transparent;
+                                font-weight: 400;
+                            }
+
+                            textarea {
+
+                            }
+                        }
+                    }
+
+                    .validation-summary-errors {
+                        color: red;
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+.footer {
+    text-align: center;
+    background-color: $bg-black;
+    color: $text-color-white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+
+    .container {
+        color: $text-color-white;
+    }
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}

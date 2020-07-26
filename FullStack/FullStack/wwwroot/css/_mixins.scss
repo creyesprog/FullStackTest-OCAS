@@ -1,0 +1,51 @@
+﻿@import './_variables.scss';
+
+@mixin font-roboto {
+    font-family: "Roboto";
+    font-weight: 300;
+}
+
+@mixin font-roboto-bold {
+    font-family: "Roboto";
+    font-weight: 400;
+}
+
+@mixin font-roboto-slab {
+    font-family: "Roboto Slab";
+    font-weight: 300;
+}
+
+@mixin font-roboto-slab-bold {
+    font-family: "Roboto Slab";
+    font-weight: 400;
+}
+
+@mixin desktop-l {
+    @media (mmin-width: $width-desktop-l) {
+        @content;
+    }
+}
+
+@mixin desktop-s {
+    @media (mmin-width: $width-desktop-s) {
+        @content;
+    }
+}
+
+@mixin tablet-l {
+    @media (mmin-width: $width-tablet-l) {
+        @content;
+    }
+}
+
+@mixin tablet-s {
+    @media (mmin-width: $width-tablet-s) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (mmin-width: $width-mobile) {
+        @content;
+    }
+}

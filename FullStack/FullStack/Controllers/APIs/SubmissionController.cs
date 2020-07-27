@@ -27,7 +27,6 @@ namespace FullStack.Controllers.APIs
         }
 
         [HttpPost]
-        [Route("Post")]
         public async Task<IActionResult> Post([FromBody]SubmissionDTO bindingModel)
         {
             ResponseDTO dto = new ResponseDTO(ErrorModel);

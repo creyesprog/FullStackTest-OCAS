@@ -11,6 +11,7 @@
   <ItemGroup>
     <Folder Include="Infrastructure\Database\Models\" />
     <Folder Include="Infrastructure\Helpers\" />
+    <Folder Include="Infrastructure\Models\DTOs\Interfaces\" />
   </ItemGroup>
 
   <ItemGroup>

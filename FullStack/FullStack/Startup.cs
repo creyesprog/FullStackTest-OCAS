@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FullStack.Infrastructure.Database;
+using FullStack.Infrastructure.Models.DTOs;
 using FullStack.Infrastructure.Repositories;
 using FullStack.Infrastructure.Repositories.Interfaces;
 using FullStack.Infrastructure.Services;
@@ -40,7 +41,7 @@ namespace FullStack
             services.AddScoped<ISubmissionRepository, SubmissionRepository>();
             services.AddScoped<ISubmissionService, SubmissionService>();
             services.AddScoped<IActivityService, ActivityService>();
-            services.AddScoped<IEnumerable<KeyValuePair<string, ModelStateEntry>>, ModelStateDictionary>();
+            services.AddScoped<IErrorModel, ErrorModel>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

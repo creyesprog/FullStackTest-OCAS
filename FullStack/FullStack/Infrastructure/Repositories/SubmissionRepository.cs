@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Newtonsoft.Json.Bson;
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -20,7 +21,7 @@ namespace FullStack.Infrastructure.Repositories
             this.db = db;
         }
 
-        public async Task<IEnumerable<Submission>> GetSubmissionsAsync()
+        public async Task<IList<Submission>> GetSubmissionsAsync()
         {
             return await db.Submission.ToListAsync();
         }
@@ -32,14 +33,15 @@ namespace FullStack.Infrastructure.Repositories
 
         public async Task<bool> SaveChangesAsync()
         {
-            bool success = false;
+            bool success;
             try
             {
+                // True if changes made successfully are greater than 0
                 success = await db.SaveChangesAsync() > 0;
             }
-            catch (Exception ex)
+            catch (DbException)
             {
-                // Add logger here
+                throw;
             }
             return success;
         }

@@ -33,6 +33,10 @@ a {
     border-radius: $button-radius;
 }
 
+.text-green {
+    color: $text-color-green;
+}
+
 .nav-pills {
     .nav-link.active {
         color: #fff;

@@ -5,18 +5,22 @@ using FullStack.Infrastructure.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Net;
 using System.Threading.Tasks;
+using System.Web.Http.Results;
 
 namespace FullStack.Controllers.APIs
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class SubmissionController : ControllerBase
+    public class SubmissionController : _BaseController
     {
-        private readonly ILogger<Submission> logger;
+        private readonly ILogger<SubmissionController> logger;
         private readonly ISubmissionService submissionService;
 
-        public SubmissionController(ILogger<Submission> _logger, ISubmissionService submissionService)
+        public SubmissionController(ILogger<SubmissionController> _logger,
+            ISubmissionService submissionService,
+            IErrorModel errorModel) : base(errorModel)
         {
             logger = _logger;
             this.submissionService = submissionService;
@@ -26,33 +30,27 @@ namespace FullStack.Controllers.APIs
         [Route("Post")]
         public async Task<IActionResult> Post([FromBody]SubmissionDTO bindingModel)
         {
-            ResponseDTO dto = new ResponseDTO();
+            ResponseDTO dto = new ResponseDTO(ErrorModel);
 
-            try
+            if (ModelState.IsValid)
             {
-                if (ModelState.IsValid)
+                // Massage data
+                bindingModel.Email = bindingModel.Email.Trim();
+                bindingModel.FirstName = bindingModel.FirstName.Trim();
+                bindingModel.LastName = bindingModel.LastName.Trim();
+                bindingModel.Comments = bindingModel.Comments.Trim();
+
+                // Call service to add submission 
+                await submissionService.AddSubmissionAsync(bindingModel.Email, bindingModel.FirstName, bindingModel.LastName, bindingModel.Comments, bindingModel.ActivityId.Value);
+
+                // Check if error model caught anything before sending ok response.
+                if (ErrorModel.Errors.Count == 0)
                 {
-                    // Massage data
-                    bindingModel.Email = bindingModel.Email.Trim();
-                    bindingModel.FirstName = bindingModel.FirstName.Trim();
-                    bindingModel.LastName = bindingModel.LastName.Trim();
-                    bindingModel.Comments = bindingModel.Comments.Trim();
-
-                    // Call service to add submission 
-                    await  submissionService.AddSubmissionAsync(bindingModel.Email, bindingModel.FirstName, bindingModel.LastName, bindingModel.Comments, bindingModel.ActivityId.Value);
-
-                    // TODO: Should be throwing an object here with errors if any accumulated in service.
-                    // Ideally should use model state. Need to utilize dependency injection and shared
-
                     return Ok(dto);
                 }
             }
-            catch (Exception ex)
-            {
-                // Log exception
-                logger.LogError(ex.StackTrace);
-            }
 
+            // TODO: Add field to ErrorModel to determine if 500 error should show
             return BadRequest(dto);
         }
     }

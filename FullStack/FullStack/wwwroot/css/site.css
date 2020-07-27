@@ -190,6 +190,9 @@ a {
   border-color: #1861ac;
   border-radius: 3px; }
 
+.text-green {
+  color: #699f51; }
+
 .nav-pills .nav-link.active {
   color: #fff;
   background-color: #1b6ec2;

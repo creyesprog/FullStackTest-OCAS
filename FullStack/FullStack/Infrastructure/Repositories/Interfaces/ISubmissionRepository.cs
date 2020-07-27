@@ -7,7 +7,7 @@ namespace FullStack.Infrastructure.Repositories.Interfaces
 {
     public interface ISubmissionRepository
     {
-        Task<IEnumerable<Submission>> GetSubmissionsAsync();
+        Task<IList<Submission>> GetSubmissionsAsync();
         Task<EntityEntry<Submission>> InsertSubmissionAsync(Submission submission);
         Task<bool> SaveChangesAsync();
     }

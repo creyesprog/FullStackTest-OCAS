@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FullStack", "FullStack\FullStack.csproj", "{1352FEF2-C788-4A56-96D0-17101BE51EBF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FullStack", "FullStack\FullStack.csproj", "{1352FEF2-C788-4A56-96D0-17101BE51EBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FullStackTests", "FullStackTests\FullStackTests.csproj", "{B7F0A431-73BF-4B53-B938-BDAA00E743A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{1352FEF2-C788-4A56-96D0-17101BE51EBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1352FEF2-C788-4A56-96D0-17101BE51EBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1352FEF2-C788-4A56-96D0-17101BE51EBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7F0A431-73BF-4B53-B938-BDAA00E743A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7F0A431-73BF-4B53-B938-BDAA00E743A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7F0A431-73BF-4B53-B938-BDAA00E743A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7F0A431-73BF-4B53-B938-BDAA00E743A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
